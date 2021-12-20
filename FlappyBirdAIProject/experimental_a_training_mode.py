@@ -9,7 +9,7 @@ import pandas as pd
 import multiprocessing
 
 pygame.init() # Initialize imported pygame modules.
-# pygame.display.set_caption('Flappy Bird AI Control')
+pygame.display.set_caption('Flappy Bird AI Experimental A')
 
 # Global variables.
 screen_height = 600
