@@ -39,6 +39,9 @@ numbers = [pygame.image.load(os.path.join(sys.path[0], 'FlappyBird/0.png')),
            pygame.image.load(os.path.join(sys.path[0], 'FlappyBird/8.png')),
            pygame.image.load(os.path.join(sys.path[0], 'FlappyBird/9.png'))]
 
+point_sound = pygame.mixer.Sound(os.path.join(sys.path[0], 'FlappyBird/point.mp3'))
+hit_sound = pygame.mixer.Sound(os.path.join(sys.path[0], 'FlappyBird/hit.mp3'))
+
 bg_height = bg.get_height()
 base_height = base.get_height()
 
@@ -156,6 +159,8 @@ class Obstacle: # Obstacle class.
             points += 1
                 
             self.passed = True
+         
+            pygame.mixer.Sound.play(point_sound)
             self.draw()
         elif self.x < -self.image.get_width():
             obstacles = obstacles[1:]
